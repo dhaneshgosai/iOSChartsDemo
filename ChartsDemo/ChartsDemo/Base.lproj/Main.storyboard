@@ -58,6 +58,7 @@
                         <segue destination="BR0-WO-6U9" kind="show" identifier="LineChartObjCSegeu" id="qLw-09-gYB"/>
                         <segue destination="vAq-WD-fqh" kind="show" identifier="StackedBarChartSegeu" id="i9V-NQ-uxj"/>
                         <segue destination="1cn-py-NYF" kind="show" identifier="GroupBarChartSegeu" id="ne8-MN-Xhe"/>
+                        <segue destination="FVl-gL-iQe" kind="show" identifier="RadarChartSegue" id="EMK-eY-8fs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -399,6 +400,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2EV-V5-tes" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2407" y="1827"/>
+        </scene>
+        <!--Radar Chart View Controller-->
+        <scene sceneID="7aa-93-w3g">
+            <objects>
+                <viewController id="FVl-gL-iQe" customClass="RadarChartViewController" customModule="ChartsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l4i-zZ-ZlY"/>
+                        <viewControllerLayoutGuide type="bottom" id="R7L-Dj-2pR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="adO-TG-fFu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76j-re-Dhb" customClass="RadarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="R7L-Dj-2pR" firstAttribute="top" secondItem="76j-re-Dhb" secondAttribute="bottom" id="C4r-d3-Nop"/>
+                            <constraint firstItem="76j-re-Dhb" firstAttribute="top" secondItem="l4i-zZ-ZlY" secondAttribute="bottom" id="IGw-se-xaK"/>
+                            <constraint firstItem="76j-re-Dhb" firstAttribute="leading" secondItem="adO-TG-fFu" secondAttribute="leading" id="X8j-e1-si2"/>
+                            <constraint firstAttribute="trailing" secondItem="76j-re-Dhb" secondAttribute="trailing" id="kNL-Ji-Yq1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="radarChartView" destination="76j-re-Dhb" id="ILN-XY-M8I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tzM-YR-cib" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3047" y="1827"/>
         </scene>
     </scenes>
     <resources>

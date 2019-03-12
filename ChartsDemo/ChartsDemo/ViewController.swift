@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     
-    var chartsTypes: [String] = ["Line Chart", "Bar Chart", "Combine Chart", "Donut Chart", "Horizontal Bar Chart","Group Bar Chart","Stacked Bar Chart","Line Chart(Obj-C)"]
+    var chartsTypes: [String] = ["Line Chart", "Bar Chart", "Combine Chart", "Donut Chart", "Horizontal Bar Chart","Group Bar Chart","Stacked Bar Chart","Line Chart(Obj-C)","Radar Chart"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +75,9 @@ extension ViewController : UITableViewDataSource,UITableViewDelegate{
             break
         case 7:
             self.performSegue(withIdentifier: "LineChartObjCSegeu", sender: nil)
+            break
+        case 8:
+            self.performSegue(withIdentifier: "RadarChartSegue", sender: nil)
             break
         default:
             break

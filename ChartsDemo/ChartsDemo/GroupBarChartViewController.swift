@@ -33,10 +33,10 @@ class GroupBarChartViewController: UIViewController {
         groupBarChartView.xAxis.labelCount = months.count
         groupBarChartView.xAxis.granularity = 1
         groupBarChartView.xAxis.granularityEnabled = true
-        groupBarChart.xAxis.wordWrapWidthPercent = 1.0
+        groupBarChartView.xAxis.wordWrapWidthPercent = 1.0
         
         //Centering Chart XAxis labes
-        groupBarChart.xAxis.centerAxisLabelsEnabled = true
+        groupBarChartView.xAxis.centerAxisLabelsEnabled = true
 //        self.xAxis.avoidFirstLastClippingEnabled = true
         
         let marker:BalloonMarker = BalloonMarker(color: .red, font: UIFont(name: "Helvetica", size: 12)!, textColor: .white, insets: UIEdgeInsets(top: 7.0, left: 7.0, bottom: 7.0, right: 7.0))
