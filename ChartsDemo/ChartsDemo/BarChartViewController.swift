@@ -33,6 +33,7 @@ class BarChartViewController: UIViewController {
         barChartView.setBarChartData(xValues: months, yValues: unitsSold, label: "Monthly Sales")
         barChartView.leftAxis.labelFont = UIFont.systemFont(ofSize: 8.0, weight: UIFont.Weight.regular)
         barChartView.leftAxis.labelTextColor = .orange
+        
         self.setUpGraph()
 //        self.setGraphData()
     }
@@ -130,7 +131,7 @@ class BarChartViewController: UIViewController {
         yVals.append(BarChartDataEntry(x: 17, y: 50))
         yVals.append(BarChartDataEntry(x: 18, y: 190))
         
-        let barChartDataSet = BarChartDataSet(values: yVals, label: "")
+        let barChartDataSet = BarChartDataSet(entries: yVals, label: "")
 //        barChartDataSet.colors = [UIColor.violetBlue]
         
         let barChartData = BarChartData(dataSet: barChartDataSet)
@@ -165,7 +166,7 @@ class BarChartViewController: UIViewController {
             dataEntries.append(dataEntry)
         }
         
-        let chartDataSet = BarChartDataSet(values: dataEntries, label: label)
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: label)
         let chartData = BarChartData(dataSets: [chartDataSet])
         
         barChartView.data = chartData
@@ -200,7 +201,7 @@ extension BarChartView {
             dataEntries.append(dataEntry)
         }
         
-        let chartDataSet = BarChartDataSet(values: dataEntries, label: label)
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: label)
         let chartData = BarChartData(dataSets: [chartDataSet])
         
         let chartFormatter = BarChartFormatter(labels: xValues)
@@ -208,7 +209,11 @@ extension BarChartView {
         xAxis.valueFormatter = chartFormatter
         self.xAxis.valueFormatter = xAxis.valueFormatter
         
-//        chartData.barWidth = Double(1.0)
+        chartData.barWidth = Double(1.0)
+        
+        chartDataSet.barBorderWidth = 0.5
+        
+    
         
 //        //Setup for GroupBars
 //        let groupSpace = 0.12 as Double

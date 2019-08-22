@@ -94,9 +94,9 @@ extension BarChartView {
             
         }
         
-        let chartDataSet1 = BarChartDataSet(values: dataEntries1, label: "Points")
+        let chartDataSet1 = BarChartDataSet(entries: dataEntries1, label: "Points")
         chartDataSet1.colors =  [UIColor.orange]
-        let chartDataSet2 = BarChartDataSet(values: dataEntries2, label: "Scans")
+        let chartDataSet2 = BarChartDataSet(entries: dataEntries2, label: "Scans")
         chartDataSet2.colors =  [UIColor.purple]
         
         let chartData = BarChartData(dataSets: [chartDataSet1,chartDataSet2])

@@ -57,7 +57,6 @@ class LineChartViewController: UIViewController {
         lineChartView.setVisibleYRangeMaximum(300, axis: .left)
         lineChartView.leftAxis.xOffset = 20.0
         lineChartView.xAxis.yOffset = 20.0
-        
         lineChartView.leftAxis.labelPosition = .insideChart
         lineChartView.rightAxis.labelPosition = .insideChart
         
@@ -258,24 +257,27 @@ extension LineChartView {
                 dataEntries.append(dataEntry)
             }
             
-            let chartDataSet = LineChartDataSet(values: dataEntries, label: labels[i])
-            chartDataSet.highlightEnabled = true
-            chartDataSet.drawHorizontalHighlightIndicatorEnabled = false
-            chartDataSet.highlightColor = .blue
-            chartDataSet.highlightLineWidth = 1
-            chartDataSet.lineWidth = 3.0
-            chartDataSet.mode = .horizontalBezier
-            chartDataSet.drawCircleHoleEnabled = true
+            let chartDataSet = LineChartDataSet(entries: dataEntries, label: labels[i])
+//            chartDataSet.highlightEnabled = true
+//            chartDataSet.drawHorizontalHighlightIndicatorEnabled = false
+//            chartDataSet.highlightColor = .blue
+//            chartDataSet.highlightLineWidth = 1
+            chartDataSet.lineWidth = 1.0
+            chartDataSet.mode = .stepped
+            chartDataSet.drawCircleHoleEnabled = false
+            chartDataSet.drawCirclesEnabled = false
             chartDataSet.drawValuesEnabled = true
             chartDataSet.axisDependency = .left
-            chartDataSet.circleHoleColor = colors[i]
-            chartDataSet.highlightColor = colors[i]
+            chartDataSet.highlightColor = .black
+            chartDataSet.highlightLineWidth = 2.0
+//            chartDataSet.circleHoleColor = colors[i]
+//            chartDataSet.highlightColor = colors[i]
             chartDataSet.colors = [colors[i]]
             
-            chartDataSet.setDrawHighlightIndicators(true)
-            
-            chartDataSet.highlightColor = .green
-            chartDataSet.highlightLineWidth = 5
+//            chartDataSet.setDrawHighlightIndicators(true)
+//
+//            chartDataSet.highlightColor = .green
+//            chartDataSet.highlightLineWidth = 5
             
             //Set Gradient Fill Color
             let gradientColors = [UIColor.red.cgColor, UIColor.blue.cgColor, UIColor.green.cgColor] as CFArray // Colors of the gradient

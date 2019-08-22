@@ -70,7 +70,7 @@ extension CombinedChartView {
             dataEntries.append(dataEntry)
         }
         
-        let chartDataSet = LineChartDataSet(values: dataEntries, label: label)
+        let chartDataSet = LineChartDataSet(entries: dataEntries, label: label)
         let lineChartData = LineChartData(dataSet: chartDataSet)
         chartDataSet.highlightEnabled = true
         chartDataSet.drawHorizontalHighlightIndicatorEnabled = false
@@ -98,7 +98,7 @@ extension CombinedChartView {
             dataEntries.append(dataEntry)
         }
         
-        let chartDataSet = BarChartDataSet(values: dataEntries, label: label)
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: label)
         chartDataSet.colors = Array(repeating: .orange , count: 1)
         let barChartData = BarChartData(dataSets: [chartDataSet])
         

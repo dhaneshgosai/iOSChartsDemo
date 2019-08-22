@@ -42,12 +42,12 @@
                   moduleName = "ChartsDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Volumes/DATA/Dhanesh/Projects/experiments/iOS-11/Templetes/All%20Demo/iOSChartsDemo/ChartsDemo/ChartsDemo/GroupBarChartViewController.swift"
-                  timestampString = "574062085.402445"
+                  timestampString = "588158366.114342"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "69"
                   endingLineNumber = "69"
-                  offsetFromSymbolStart = "108">
+                  offsetFromSymbolStart = "140">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -57,12 +57,42 @@
                   moduleName = "ChartsDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Volumes/DATA/Dhanesh/Projects/experiments/iOS-11/Templetes/All%20Demo/iOSChartsDemo/ChartsDemo/ChartsDemo/GroupBarChartViewController.swift"
-                  timestampString = "574062085.404109"
+                  timestampString = "588158366.115976"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "69"
                   endingLineNumber = "69"
-                  offsetFromSymbolStart = "132">
+                  offsetFromSymbolStart = "192">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in ChartsDemo):Charts.BarChartView.(GroupBarChartFormatter in _C5AC0D80BA3BB595E216F438B28B4C50).labels.modify : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "ChartsDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/Dhanesh/Projects/experiments/iOS-11/Templetes/All%20Demo/iOSChartsDemo/ChartsDemo/ChartsDemo/GroupBarChartViewController.swift"
+                  timestampString = "588158366.117646"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in ChartsDemo):Charts.BarChartView.(GroupBarChartFormatter in _C5AC0D80BA3BB595E216F438B28B4C50).labels.modify : Swift.Array&lt;Swift.String&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "ChartsDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/Dhanesh/Projects/experiments/iOS-11/Templetes/All%20Demo/iOSChartsDemo/ChartsDemo/ChartsDemo/GroupBarChartViewController.swift"
+                  timestampString = "588158366.119185"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "12">
                </Location>
             </Locations>
          </BreakpointContent>

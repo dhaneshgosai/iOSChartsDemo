@@ -81,7 +81,7 @@ extension BarChartView {
             dataEntries1.append(dataEntry1)
         }
         
-        let chartDataSet1 = BarChartDataSet(values: dataEntries1, label: "Points")
+        let chartDataSet1 = BarChartDataSet(entries: dataEntries1, label: "Points")
         chartDataSet1.barBorderColor = .red
         chartDataSet1.stackLabels = ["Points", "Scans"]
         chartDataSet1.colors =  [UIColor.orange, UIColor.purple]

@@ -83,7 +83,7 @@ extension PieChartView {
             
         })
         
-        let pieChartDataSet = PieChartDataSet(values: valuesArray, label: "Pie Data Chart")
+        let pieChartDataSet = PieChartDataSet(entries: valuesArray, label: "Pie Data Chart")
         pieChartDataSet.colors = colors
         
         let piechartData = PieChartData(dataSets:[pieChartDataSet])
