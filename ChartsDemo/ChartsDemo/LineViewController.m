@@ -182,7 +182,7 @@
     }
     
     //DataSet 1
-    LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithValues:values1 label:@"value1"];
+    LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithEntries:values1 label:@"value1"];
     set1.axisDependency = AxisDependencyRight;
     set1.lineWidth = 2;
     set1.drawFilledEnabled = YES;
@@ -200,7 +200,7 @@
     [set1 setDrawHorizontalHighlightIndicatorEnabled:NO];
     
     //DataSet 2
-    LineChartDataSet *set2 = [[LineChartDataSet alloc] initWithValues:values2 label:@"value2"];
+    LineChartDataSet *set2 = [[LineChartDataSet alloc] initWithEntries:values2 label:@"value2"];
     set2.lineWidth = 2;
      set2.axisDependency = AxisDependencyLeft;
     
