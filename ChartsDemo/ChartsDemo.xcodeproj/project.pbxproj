@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1E62E0A12201DF7800E6241E /* StackedBarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E62E0A02201DF7800E6241E /* StackedBarChartViewController.swift */; };
+		1ED2EC4A231F939D007A4321 /* LineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED2EC49231F939D007A4321 /* LineTableViewController.swift */; };
+		1ED2EC4C231F9487007A4321 /* LineGraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED2EC4B231F9487007A4321 /* LineGraphCell.swift */; };
 		1EE1D2172236943D00C02D46 /* RadarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE1D2162236943D00C02D46 /* RadarChartViewController.swift */; };
 		2CAF2E60F1AC0EB69332A536 /* Pods_ChartsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70C0E93C6564A5542079062 /* Pods_ChartsDemo.framework */; };
 		FF031942212ABFCF008783D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF031923212ABFCF008783D2 /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 /* Begin PBXFileReference section */
 		1E1293E82238E6AE00D00098 /* ChartsDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChartsDemo.entitlements; sourceTree = "<group>"; };
 		1E62E0A02201DF7800E6241E /* StackedBarChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackedBarChartViewController.swift; sourceTree = "<group>"; };
+		1ED2EC49231F939D007A4321 /* LineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTableViewController.swift; sourceTree = "<group>"; };
+		1ED2EC4B231F9487007A4321 /* LineGraphCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGraphCell.swift; sourceTree = "<group>"; };
 		1EE1D2162236943D00C02D46 /* RadarChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChartViewController.swift; sourceTree = "<group>"; };
 		20AB13EB1ED2E8F200D4BC47 /* ChartsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChartsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F1D3FF3BF214EA2E3A9AD44 /* Pods-ChartsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChartsDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChartsDemo/Pods-ChartsDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 				1EE1D2162236943D00C02D46 /* RadarChartViewController.swift */,
 				FF031923212ABFCF008783D2 /* ViewController.swift */,
 				FF031924212ABFCF008783D2 /* LineChartViewController.swift */,
+				1ED2EC49231F939D007A4321 /* LineTableViewController.swift */,
+				1ED2EC4B231F9487007A4321 /* LineGraphCell.swift */,
 				FF031926212ABFCF008783D2 /* Assets.xcassets */,
 				FF031936212ABFCF008783D2 /* LaunchScreen.storyboard */,
 				FF031938212ABFCF008783D2 /* Main.storyboard */,
@@ -302,6 +308,7 @@
 				FF031942212ABFCF008783D2 /* ViewController.swift in Sources */,
 				1EE1D2172236943D00C02D46 /* RadarChartViewController.swift in Sources */,
 				FF031943212ABFCF008783D2 /* LineChartViewController.swift in Sources */,
+				1ED2EC4C231F9487007A4321 /* LineGraphCell.swift in Sources */,
 				1E62E0A12201DF7800E6241E /* StackedBarChartViewController.swift in Sources */,
 				FF03194B212ABFCF008783D2 /* BalloonMarker.swift in Sources */,
 				FF031953212ABFCF008783D2 /* AppDelegate.swift in Sources */,
@@ -314,6 +321,7 @@
 				FF031952212ABFCF008783D2 /* DonutChartViewController.swift in Sources */,
 				FF031946212ABFCF008783D2 /* DateValueFormatter.m in Sources */,
 				FF031944212ABFCF008783D2 /* LineViewController.m in Sources */,
+				1ED2EC4A231F939D007A4321 /* LineTableViewController.swift in Sources */,
 				FF031949212ABFCF008783D2 /* LargeValueFormatter.swift in Sources */,
 				FF031954212ABFCF008783D2 /* BarChartViewController.swift in Sources */,
 			);

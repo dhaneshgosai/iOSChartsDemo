@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vgp-c6-OhB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vgp-c6-OhB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -59,6 +59,7 @@
                         <segue destination="vAq-WD-fqh" kind="show" identifier="StackedBarChartSegeu" id="i9V-NQ-uxj"/>
                         <segue destination="1cn-py-NYF" kind="show" identifier="GroupBarChartSegeu" id="ne8-MN-Xhe"/>
                         <segue destination="FVl-gL-iQe" kind="show" identifier="RadarChartSegue" id="EMK-eY-8fs"/>
+                        <segue destination="pJy-gY-heB" kind="show" identifier="LineTableViewChart" id="cQG-Uy-hZB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -433,6 +434,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tzM-YR-cib" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3047" y="1827"/>
+        </scene>
+        <!--Line Table View Controller-->
+        <scene sceneID="Yxn-E4-jWR">
+            <objects>
+                <tableViewController storyboardIdentifier="LineTableViewController" id="pJy-gY-heB" customClass="LineTableViewController" customModule="ChartsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xa2-3H-7Vb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="lineChart_cell" id="8h2-8y-r94" customClass="LineGraphCell" customModule="ChartsDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="250"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8h2-8y-r94" id="r3l-eJ-75t">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kjo-Kl-VsK" customClass="LineChartView" customModule="Charts">
+                                            <rect key="frame" x="5" y="5" width="365" height="239.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="kjo-Kl-VsK" firstAttribute="leading" secondItem="r3l-eJ-75t" secondAttribute="leading" constant="5" id="1V6-dD-3mY"/>
+                                        <constraint firstAttribute="trailing" secondItem="kjo-Kl-VsK" secondAttribute="trailing" constant="5" id="f2f-g7-wEf"/>
+                                        <constraint firstAttribute="bottom" secondItem="kjo-Kl-VsK" secondAttribute="bottom" constant="5" id="iua-yp-8aw"/>
+                                        <constraint firstItem="kjo-Kl-VsK" firstAttribute="top" secondItem="r3l-eJ-75t" secondAttribute="top" constant="5" id="wSr-nV-Dgo"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lineChart" destination="kjo-Kl-VsK" id="9Py-aX-xCv"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pJy-gY-heB" id="5hU-t5-lOi"/>
+                            <outlet property="delegate" destination="pJy-gY-heB" id="nhH-oD-Kv3"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YAx-Ml-Fqt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3753" y="1827"/>
         </scene>
     </scenes>
     <resources>
