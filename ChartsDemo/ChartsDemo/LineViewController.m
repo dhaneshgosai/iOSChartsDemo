@@ -2,7 +2,7 @@
 //  LineViewController.m
 //  TestSwift
 //
-//  Created by Sheshnath on 9/7/17.
+//  Created by DG on 9/7/17.
 //  Copyright © 2017 Test. All rights reserved.
 //
 
@@ -19,14 +19,6 @@
 @property (nonatomic, weak) BarChartView *barChartOrdersView;
 @property (weak, nonatomic) IBOutlet UIImageView *imgMirror;
 @property (nonatomic, strong) NSMutableArray *xVal,*yVal1,*yVal2;
-@end
-
-@interface Foo : NSObject
-- (void)m:(id _Nullable)p;
-@end
-
-@interface Bar : Foo
-- (void)m:(id _Nonnull)p;
 @end
 
 @implementation LineViewController

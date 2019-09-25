@@ -2,7 +2,7 @@
 //  RadarChartViewController.swift
 //  ChartsDemo
 //
-//  Created by Sheshnath on 11/03/19.
+//  Created by DG on 11/03/19.
 //  Copyright © 2019 Test. All rights reserved.
 //
 
@@ -19,13 +19,21 @@ class RadarChartViewController: UIViewController {
         self.radarChartView.setUpRadarChartData()
         self.radarChartView.extraLeftOffset = 10
         self.radarChartView.extraRightOffset = 10
+        self.radarChartView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.radarChartView.animate(xAxisDuration: 0.0, yAxisDuration: 1.0)
     }
+    
+    
 
+}
+extension RadarChartViewController : ChartViewDelegate {
+    func chartTranslated(_ chartView: ChartViewBase, dX: CGFloat, dY: CGFloat) {
+        print("chartTranslated")
+    }
 }
 
 extension RadarChartView {

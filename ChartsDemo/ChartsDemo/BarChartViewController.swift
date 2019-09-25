@@ -2,13 +2,12 @@
 //  BarChartViewController.swift
 //  TestSwift
 //
-//  Created by Amit Bhonsle on 20/06/17.
+//  Created by DG on 20/06/17.
 //  Copyright © 2017 Test. All rights reserved.
 //
 
 import UIKit
 import Charts
-import SDWebImage
 
 class BarChartViewController: UIViewController {
 
@@ -145,23 +144,12 @@ class BarChartViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func setBarChartData(xValues: [String], yValues: [Double], label: String) {
         
         var dataEntries: [BarChartDataEntry] = []
         
         for i in 0..<yValues.count {
-//            let dataEntry = BarChartDataEntry(x: Double(i), y: yValues[i])
             let dataEntry = BarChartDataEntry(x:yValues[i],y:Double(i))
             dataEntries.append(dataEntry)
         }
@@ -212,8 +200,6 @@ extension BarChartView {
         chartData.barWidth = Double(1.0)
         
         chartDataSet.barBorderWidth = 0.5
-        
-    
         
 //        //Setup for GroupBars
 //        let groupSpace = 0.12 as Double

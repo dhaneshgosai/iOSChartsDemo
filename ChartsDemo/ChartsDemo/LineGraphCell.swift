@@ -2,7 +2,7 @@
 //  LineGraphCell.swift
 //  ChartsDemo
 //
-//  Created by Sheshnath on 04/09/19.
+//  Created by DG on 04/09/19.
 //  Copyright © 2019 Test. All rights reserved.
 //
 
@@ -24,8 +24,8 @@ class LineGraphCell: UITableViewCell {
     
     @IBOutlet weak var lineChart: LineChartView!
     
-    let x = [0,1,2,3,4,5,6,7,8,9]
-    let y = [0,1,2,3,4,5,6,7,8,9]
+    let x = [0]
+    let y = [5]
     
     func setChartValues() {
         
@@ -47,6 +47,30 @@ class LineGraphCell: UITableViewCell {
                 print("\(value.y) ", terminator: "")
             }
         }
+            
+            let yAxis = self.lineChart.leftAxis
+//            yAxis.labelFont = UIFont.mainAppFont(11)
+            yAxis.setLabelCount(5, force: true)
+//            yAxis.labelTextColor = .white
+            yAxis.labelPosition = .outsideChart
+//            yAxis.axisLineColor = .stackedTipTextColor
+            yAxis.granularity = 1.0
+            yAxis.granularityEnabled = true
+            yAxis.drawGridLinesEnabled = true
+            yAxis.drawAxisLineEnabled = false
+        
+        let xAxis = self.lineChart.xAxis
+//        xAxis.labelFont = UIFont.mainAppFont(11)
+//        xAxis.labelTextColor = .white
+        xAxis.labelPosition = .bottom
+//        xAxis.granularity = 1.0
+//        xAxis.granularityEnabled = true
+        xAxis.drawAxisLineEnabled = false
+        xAxis.drawGridLinesEnabled = false
+        xAxis.labelCount = x.count
+        xAxis.setLabelCount(5, force: true)
+//        xAxis.valueFormatter = DateValueFormatter()
+        xAxis.yOffset = 20.0
         self.lineChart.data = data
     }
 

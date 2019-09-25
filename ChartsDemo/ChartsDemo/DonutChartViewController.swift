@@ -2,7 +2,7 @@
 //  DonutChartViewController.swift
 //  TestSwift
 //
-//  Created by Amit Bhonsle on 07/07/17.
+//  Created by DG on 07/07/17.
 //  Copyright © 2017 Test. All rights reserved.
 //
 

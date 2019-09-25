@@ -25,7 +25,7 @@ import Charts
     fileprivate var labelns: NSString?
     fileprivate var _labelSize: CGSize = CGSize()
     fileprivate var _paragraphStyle: NSMutableParagraphStyle?
-    fileprivate var _drawAttributes = [NSAttributedStringKey : Any] ()
+    fileprivate var _drawAttributes = [NSAttributedString.Key : Any] ()
     
     @objc public init(color: UIColor, font: UIFont, textColor: UIColor, insets: UIEdgeInsets)
     {
@@ -122,9 +122,9 @@ import Charts
         labelns = label as NSString
         
         _drawAttributes.removeAll()
-        _drawAttributes[kCTFontAttributeName as NSAttributedStringKey] = self.font
-        _drawAttributes[kCTParagraphStyleAttributeName as NSAttributedStringKey] = _paragraphStyle
-        _drawAttributes[kCTForegroundColorAttributeName as NSAttributedStringKey] = self.textColor
+        _drawAttributes[kCTFontAttributeName as NSAttributedString.Key] = self.font
+        _drawAttributes[kCTParagraphStyleAttributeName as NSAttributedString.Key] = _paragraphStyle
+        _drawAttributes[kCTForegroundColorAttributeName as NSAttributedString.Key] = self.textColor
         
         _labelSize = labelns?.size(withAttributes: _drawAttributes) ?? CGSize.zero
         

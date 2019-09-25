@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  TestSwift
 //
-//  Created by Amit Bhonsle on 22/05/17.
+//  Created by DG on 22/05/17.
 //  Copyright © 2017 Test. All rights reserved.
 //
 
@@ -14,13 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        NotificationCenter.default.addObserver(self, selector: #selector(screenShotCaptured), name: NSNotification.Name.UIApplicationUserDidTakeScreenshot, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(screenShotCaptured), name: UIApplication.userDidTakeScreenshotNotification, object: nil)
         
         if #available(iOS 11.0, *) {
-            NotificationCenter.default.addObserver(self, selector: #selector(screenCaptureChanged), name: NSNotification.Name.UIScreenCapturedDidChange, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(screenCaptureChanged), name: UIScreen.capturedDidChangeNotification, object: nil)
         } else {
             // Fallback on earlier versions
         }

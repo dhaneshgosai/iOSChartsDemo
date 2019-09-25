@@ -2,7 +2,7 @@
 //  HoriBarChartViewController.swift
 //  TestSwift
 //
-//  Created by Sheshnath on 07/03/18.
+//  Created by DG on 07/03/18.
 //  Copyright © 2018 Test. All rights reserved.
 //
 
@@ -23,7 +23,6 @@ class HoriBarChartViewController: UIViewController {
         
         months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
         unitsSold = [106167.0, 533647.0, 340356.0, 27000.0, 0.0, 321784.0, 45706.0, 0.0, 2.0, 4.0, 5.0, 4.0]
-        print("Max Val",unitsSold.max())
         
         horiBarChartView.noDataText = "Data will load soon..."
         horiBarChartView.xAxis.labelCount = months.count
@@ -37,13 +36,10 @@ class HoriBarChartViewController: UIViewController {
         horiBarChartView.leftAxis.granularityEnabled = true
         horiBarChartView.leftAxis.granularity = 1.0
         
-        
-    
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }

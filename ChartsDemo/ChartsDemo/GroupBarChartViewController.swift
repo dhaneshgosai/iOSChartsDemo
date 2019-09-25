@@ -2,7 +2,7 @@
 //  GroupBarChartViewController.swift
 //  TestSwift
 //
-//  Created by Sheshnath on 09/07/18.
+//  Created by DG on 09/07/18.
 //  Copyright © 2018 Test. All rights reserved.
 //
 

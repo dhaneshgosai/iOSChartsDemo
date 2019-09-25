@@ -2,7 +2,7 @@
 //  LineChartViewController.swift
 //  TestSwift
 //
-//  Created by Amit Bhonsle on 20/06/17.
+//  Created by DG on 20/06/17.
 //  Copyright © 2017 Test. All rights reserved.
 //
 
@@ -20,18 +20,38 @@ class LineChartViewController: UIViewController {
     var unitsSold2:[Double]!
     var swims: [Array<Any>]!
     
+    
+    
     @IBOutlet weak var lineSegment: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Line Chart"
+        
+        
         // Do any additional setup after loading the view.
         
-        swims = [["Dec 1,2017",241.1],["Feb 4,2018",237.23],["Feb 21,2018",233.1],["Mar 23,2018",222.1],["Apr 1,2018",240.23],["Apr 15,2018",199.34]]
+        swims = [["Dec 1,2017",241.1],
+                 ["Feb 4,2018",237.23],
+                 ["Feb 21,2018",233.1],
+                 ["Mar 23,2018",222.1],
+                 ["Apr 1,2018",240.23],
+                 ["Apr 15,2018",199.34]]
         
 //        let xVal = swims.map { $0 }
 //        let yVal = swims.map { $0 }
-        
-        months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+         months = ["2018-01-16 03:19:08 +0000",
+        "2018-01-17 02:58:29 +0000",
+        "2018-01-20 20:48:58 +0000",
+        "2018-01-21 02:13:17 +0000",
+        "2018-01-22 02:11:43 +0000",
+        "2018-01-26 01:16:37 +0000",
+        "2018-01-28 02:22:48 +0000",
+        "2018-01-28 03:58:07 +0000",
+        "2018-02-03 22:12:02 +0000",
+        "2018-02-04 03:44:11 +0000",
+        "2018-02-10 20:54:22 +0000",
+        "2018-02-10 22:14:51 +0000"]
+//        months = ["Dec 1,2017", "Feb 4,2018", "Feb 21,2018", "Mar 23,2018", "Apr 1,2018", "Apr 15,2018", "Apr 16,2018", "Apr 17,2018", "Apr 18,2018", "May 15,2018", "May 16,2018", "May 17,2018"]
         unitsSold = [26.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
         unitsSold1 = [10.0, 14.0, 26.0, 23.0, 2.0, 6.0, 24.0, 1.0, 22.0, 14.0, 25.0, 14.0]
         unitsSold2 = [6.0, 24.0, 16.0, 13.0, 22.0, 26.0, 14.0, 8.0, 12.0, 24.0, 15.0, 24.0]
@@ -40,15 +60,15 @@ class LineChartViewController: UIViewController {
         let colors = [UIColor.red,UIColor.green,UIColor.blue]
         lineChartView.delegate = self
         lineChartView.noDataText = "Data will load soon..."
-        lineChartView.xAxis.labelCount = swims.count
-        lineChartView.leftAxis.labelCount = swims.count
+        lineChartView.xAxis.labelCount = months.count
+        lineChartView.leftAxis.labelCount = months.count
         lineChartView.setLineChartData(xValues: months,
                                        labels: ["Monthly Sales","Quarterly Sales","Yearly Sales"],
                                        dataSets: [unitsSold,unitsSold1,unitsSold2],
                                        colors: colors)
         lineChartView.xAxis.labelFont = UIFont.systemFont(ofSize: 8.0, weight: UIFont.Weight.bold)
         lineChartView.xAxis.labelTextColor = .orange
-        lineChartView.xAxis.granularity = 1
+//        lineChartView.xAxis.granularity = 1
         lineChartView.xAxis.labelPosition = .bottom
         lineChartView.drawBordersEnabled = true
         lineChartView.leftAxis.drawTopYLabelEntryEnabled = true
@@ -59,7 +79,8 @@ class LineChartViewController: UIViewController {
         lineChartView.xAxis.yOffset = 20.0
         lineChartView.leftAxis.labelPosition = .insideChart
         lineChartView.rightAxis.labelPosition = .insideChart
-        
+//        lineChartView.xAxis.granularity = 1.0
+//        lineChartView.xAxis.granularityEnabled = true
         let marker:BalloonMarker = BalloonMarker(color: .red, font: UIFont(name: "Helvetica", size: 12)!, textColor: .white, insets: UIEdgeInsets(top: 7.0, left: 7.0, bottom: 7.0, right: 7.0))
         marker.minimumSize = CGSize(width:75.0, height:35.0)
         lineChartView.marker = marker
@@ -159,13 +180,37 @@ extension LineChartView {
     private class LineChartFormatter: NSObject, IAxisValueFormatter {
         
         var labels: [String] = []
+        let dateFormatter = DateFormatter()
+        let dateShortFormatter = DateFormatter()
         
         func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-            return labels[Int(value)]
+            
+            
+            if let date = dateFormatter.date(from:labels[Int(value)]) {
+                if value == 0 {
+                    dateShortFormatter.dateFormat = "MMM dd"
+                    return dateShortFormatter.string(from: date)
+                } else {
+                    
+                    let prevDate = dateFormatter.date(from:labels[Int(value - 1)])
+                    dateShortFormatter.dateFormat = "MMM"
+                    if dateShortFormatter.string(from: date) != dateShortFormatter.string(from: prevDate!) {
+                        dateShortFormatter.dateFormat = "MMM dd"
+                        return dateShortFormatter.string(from: date)
+                    } else {
+                        dateShortFormatter.dateFormat = "dd"
+                        return dateShortFormatter.string(from: date)
+                    }
+                }
+            } else {
+              return labels[Int(value)]
+            }
         }
         
         init(labels: [String]) {
             super.init()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+            
             self.labels = labels
         }
     }
@@ -291,6 +336,11 @@ extension LineChartView {
         
         }
         
+        
+        let chartFormatter = LineChartFormatter(labels: xValues)
+        let xAxis = XAxis()
+        xAxis.valueFormatter = chartFormatter
+        self.xAxis.valueFormatter = xAxis.valueFormatter
         let chartData = LineChartData(dataSets: dataSetsArray)
         self.data = chartData
         self.animate(xAxisDuration: 1.0,easingOption: .easeInExpo)

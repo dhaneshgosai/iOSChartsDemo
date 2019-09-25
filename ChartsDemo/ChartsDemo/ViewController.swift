@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  TestSwift
 //
-//  Created by Amit Bhonsle on 22/05/17.
+//  Created by DG on 22/05/17.
 //  Copyright © 2017 Test. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     
-    var chartsTypes: [String] = ["Line Chart", "Bar Chart", "Combine Chart", "Donut Chart", "Horizontal Bar Chart","Group Bar Chart","Stacked Bar Chart","Line Chart(Obj-C)","Radar Chart","Line Chart with TableView"]
+    var chartsTypes: [String] = ["Line Chart", "Bar Chart", "Combine Chart", "Donut Chart", "Horizontal Bar Chart","Group Bar Chart","Stacked Bar Chart","Line Chart(Obj-C)","Radar Chart","Line Chart with TableView", "Scatter Chart"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,7 @@ extension ViewController : UITableViewDataSource,UITableViewDelegate{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         cell.textLabel?.text = chartsTypes[indexPath.row]
-        cell.selectionStyle = UITableViewCellSelectionStyle.none
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         return cell
     }
     
@@ -81,6 +81,9 @@ extension ViewController : UITableViewDataSource,UITableViewDelegate{
             break
         case 9:
             self.performSegue(withIdentifier: "LineTableViewChart", sender: nil)
+            break
+        case 10:
+            self.performSegue(withIdentifier: "ScatterViewChart", sender: nil)
             break
         default:
             break

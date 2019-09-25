@@ -2,7 +2,7 @@
 //  StackedBarChartViewController.swift
 //  ChartsDemo
 //
-//  Created by Sheshnath on 30/01/19.
+//  Created by DG on 30/01/19.
 //  Copyright © 2019 Test. All rights reserved.
 //
 
